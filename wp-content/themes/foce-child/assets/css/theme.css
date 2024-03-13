@@ -1,0 +1,68 @@
+:root {
+  --rotate: 15s;
+  --posX: 0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#page {
+  position: relative;
+}
+
+main {
+  /* overflow: hidden; */
+}
+
+
+/* ************** */
+/*   Navigation   */
+/* ************** */
+.main-navigation.toggled ul {
+    display: flex !important;
+}
+
+#site-navigation {
+  position: relative;
+}
+/* ************************* */
+/*  BANNER Gestion du parallaxe du hero: */ 
+/* ************************* */
+.banner {
+  position: relative;
+  object-fit: contain;
+  height: 800px;
+  background-image: none;
+}
+
+.banner__background {
+  z-index: -2;
+  opacity: 1;
+  left: auto !important;
+  max-width: 100%;
+  overflow: hidden;  
+}
+
+.banner__video {  
+  z-index: 1;
+  opacity: 1;
+  left: auto !important;
+}
+
+.banner__background, 
+.banner__video {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  min-width: 1440px !important;  
+  animation: move-down 2s 300ms both;
+}
+
+.banner__logo {
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  opacity: 1;
+  animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;  
+}
