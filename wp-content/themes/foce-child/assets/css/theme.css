@@ -1,31 +1,5 @@
-:root {
-  --rotate: 15s;
-  --posX: 0;
-}
-
-.hidden {
-  opacity: 0;
-}
-
-#page {
-  position: relative;
-}
-
-main {
-  /* overflow: hidden; */
-}
 
 
-/* ************** */
-/*   Navigation   */
-/* ************** */
-.main-navigation.toggled ul {
-    display: flex !important;
-}
-
-#site-navigation {
-  position: relative;
-}
 /* ************************* */
 /*  BANNER Gestion du parallaxe du hero: */ 
 /* ************************* */
@@ -65,4 +39,142 @@ main {
   z-index: 10;
   opacity: 1;
   animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;  
+}
+
+/* ************************ */
+/*       LIEU - Nuage       */
+/* ************************ */
+.story #place {
+  position:relative;
+  background-image: url("../images/Studio_Koukaki-image_place.png");
+  z-index: -1;
+}
+
+#place .place--big_cloud,
+#place .place--little_cloud {
+  position: absolute;
+  filter: blur(12px);
+  -webkit-filter: blur(12px);
+  -moz-filter: blur(12px);
+  z-index: 2;
+}
+
+/* ---- AJOUT 4 ----  */
+#place .place--big_cloud {
+  height: 122px;	
+  top: 70px;
+  right: 90px;
+  transform: translateX(var(--posX));
+}
+
+#place .place--little_cloud {
+  height: 55px;	
+  top: 250px;
+  right: 500px;
+  transform: translateX(var(--posX));
+}
+
+/* ********************** */
+/*       NOMINATION       */
+/* ********************** */
+
+.nomination {  
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.nomination__title {  
+  position: relative;
+}
+
+.nomination__title img {
+  height: 100%;
+}
+
+.nomination__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+}
+
+.nomination img {
+  height: 100%;
+}
+
+/* ---- AJOUT 6 ----  */
+/* Suppression des fleurs du pieds de page pour le déplacer dans la nouvelle section- */
+.nomination::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+.nomination::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer::before {
+  content: '';
+}
+
+.site-footer::after {
+  content: '';
+}
+
+#place h3 {
+  width: 60%;
+}
+
+/* **************** */
+/*      SWIPER      */
+/* **************** */
+.story #characters {
+  position: relative;
+  margin-bottom: 0 !important;
+  z-index: 20;
+}
+
+.story #characters div {
+  flex: none;
+}
+
+.swiper-container {
+  width: 100%;
+  /* height: 420px; */
+  opacity: 1;
+  margin-bottom: 7em;  
+  overflow: hidden;
+}
+
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide figure {
+  display: block;
+  /* max-height: 400px ; */
+  width: 100%;
+  /* height: 100%; */
+  object-fit: cover;  
 }
