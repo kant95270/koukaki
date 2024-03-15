@@ -11,6 +11,10 @@ function theme_enqueue_styles() {
         
             // wp_enqueue_script( 'swiper-element-bundle.min', 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js', array(), '11.0.7', true );
             wp_enqueue_script( 'swiper-element-bundle.min', get_theme_file_uri( '/assets/js/swiper-bundle.min.js'), array(), '11.0.7', true );
+
+             
+    // Enqueue Custom Scripts
+    wp_enqueue_script( 'order-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array('jquery'), '1.0.0', true );
             
            
 }
@@ -25,3 +29,24 @@ if ( get_stylesheet() !== get_template() ) {
         return get_option( 'theme_mods_' . get_template(), $default );
     } );
 }
+
+ /**
+ * Shortcode pour ajouter le pied de page
+ */
+function add_footer($string) {
+
+	/** Code du bouton */
+	$string .= '<footer id="colophon" class="site-footer">
+    <ul>
+        <li><a href="'.get_site_url().'/politique-confidentialite" >Mentions Légales</a></li>
+        <li><a href="'.get_site_url().'">STUDIO KOUKAKI</a></li>
+        <li><a href="'.get_site_url().'/contact">Contact</a></li>
+        </ul>
+    </footer>';
+
+	/** On retourne le code  */
+	return $string;
+}
+
+/** On publie le shortcode  */
+add_shortcode('footer', 'add_footer');

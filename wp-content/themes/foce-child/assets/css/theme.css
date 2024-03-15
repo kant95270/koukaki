@@ -1,7 +1,53 @@
+:root {
+  --rotate: 15s;
+  --posX: 0;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#page {
+  position: relative;
+}
+
+main {
+  /* overflow: hidden; */
+}
+
+
+/* ************** */
+/*   Navigation   */
+/* ************** */
+.main-navigation.toggled ul {
+	display: flex !important;
+}
+
+#site-navigation {
+  position: relative;
+}
+
+
+
+
+
+
+/*  **********************************  */
+/*    Media query : max-width: 700px    */
+/*  **********************************  */
+@media all and (max-width: 700px) { 
+  .main-navigation {
+    height: 80px;
+  }
+
+  .main-navigation ul {
+		display: flex !important;
+	}
+}
 
 
 /* ************************* */
-/*  BANNER Gestion du parallaxe du hero: */ 
+/*       HERO - BANNER       */
 /* ************************* */
 .banner {
   position: relative;
@@ -41,6 +87,59 @@
   animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;  
 }
 
+
+/*  **********************************  */
+/*    Media query : max-width: 920px    */
+/*  **********************************  */
+@media all and (max-width: 920px) {
+    .banner img {
+    width: 70%;
+  }
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 700px    */
+/*  **********************************  */
+@media all and (max-width: 700px) {
+  .banner  {
+    min-height: 600px !important;
+    height: auto !important;
+    width: 100vw
+  }
+
+  .banner .banner__video {
+    opacity: 0; 
+  }
+
+  .banner__background {
+    opacity: 1;
+    min-width: 1200px !important;
+  }
+
+  .banner img {
+    width: 80%;
+  }
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 580px    */
+/*  **********************************  */
+@media all and (max-width: 580px) {
+  .banner  {
+    min-height: 400px !important;
+    /* height: 400px !important; */
+  }
+
+  .banner .banner__video {
+    opacity: 0; 
+  }
+
+  .banner__background {
+    opacity: 1;
+    min-width: 900px !important;
+  }
+}
+
 /* ************************ */
 /*       LIEU - Nuage       */
 /* ************************ */
@@ -69,72 +168,151 @@
 
 #place .place--little_cloud {
   height: 55px;	
-  top: 250px;
+	top: 250px;
   right: 500px;
   transform: translateX(var(--posX));
 }
 
-/* ********************** */
-/*       NOMINATION       */
-/* ********************** */
 
-.nomination {  
+/* ************************ */
+/*       TITLE H2 / H3      */
+/* ************************ */
+.story #characters {
+	margin: 6em;
+	display: flex;
+	flex-direction: column;
+}
+
+.story > h2,
+.studio >  h2,
+#characters > h3,
+#place h3 {
+  color: transparent;
+  height: 202px;
+}
+
+.story > h2,
+.studio >  h2,
+#characters > h3 {
+  z-index: -1;
+}
+
+
+#place h3 {
+  z-index: 4;
+}
+
+.story > h2,
+.studio >  h2 {
+  width: 100%;
+}
+
+#characters > h3,
+#place h3  {
   position: relative;
-  padding: 150px 0 50px;
+  width: 40%;
+}
+
+.story > h2 span,
+.studio > h2 span,
+#characters span,
+#place span {
+  position: absolute;
+  color: #FFF5E9;
+  opacity: 0;
+  z-index: 4;
+}
+
+.story > h2 span,
+.studio > h2 span,
+#characters span,
+#place span {
+  top: 100px;  
+}
+
+.story #characters,
+#characters > h3 span,
+#place span {
+  width: 100%;
+}
+
+.entry-title {
+  color: #2b1582 !important;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 40px;
+}
+
+h2.rpg_title,
+label {
+  color: #653ffe !important;
+  background-image: none !important;
+}
+
+form p,
+label {
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+}
+
+form p {
+  margin: 0;
+}
+
+form .container-form {
+  margin: 10px 0;
+}
+
+form {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px 0;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.nomination__title {  
-  position: relative;
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  border-radius: 5px;
 }
 
-.nomination__title img {
-  height: 100%;
+form span {
+  color: red;
 }
 
-.nomination__title h3 {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  line-height: 3.2rem;
-  text-align: left;
+form .name {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
 }
 
-.nomination img {
-  height: 100%;
+form .subject,
+form .message {
+  width: 90%;
 }
 
-/* ---- AJOUT 6 ----  */
-/* Suppression des fleurs du pieds de page pour le déplacer dans la nouvelle section- */
-.nomination::before {
-  content: url("../images/Sunflower.png");
-  position: absolute;
-  left: 4em;
-  top: 0em;
+
+form .form-subject {
+  width: 100%;
 }
 
-.nomination::after {
-  content: url("../images/orchid.png");
-  position: absolute;
-  right: -4em;
-  top: -3em;
+form .submit p {
+  display: flex;
+  justify-content: center;
 }
 
-.site-footer::before {
-  content: '';
+form input[type="submit"] {
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #ff5c00;
+  color: #fff5e9;
+  padding: 15px 30px;
+  margin: 25px auto;
 }
 
-.site-footer::after {
-  content: '';
-}
 
-#place h3 {
-  width: 60%;
-}
+
 
 /* **************** */
 /*      SWIPER      */
@@ -178,3 +356,41 @@
   /* height: 100%; */
   object-fit: cover;  
 }
+
+
+
+/* ********************** */
+/*       NOMINATION       */
+/* ********************** */
+
+.nomination {  
+  position: relative;
+  padding: 150px 0 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.nomination__title {  
+  position: relative;
+}
+
+.nomination__title img {
+  height: 100%;
+}
+
+.nomination__title h3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 3.2rem;
+  text-align: left;
+}
+
+.nomination img {
+  height: 100%;
+}
+
+
