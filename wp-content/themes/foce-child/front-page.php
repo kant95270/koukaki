@@ -13,8 +13,9 @@ get_header();
                    </video>
                    <img class="banner__logo" src="<?php echo get_theme_file_uri() . '/assets/images/logo.png'; ?>" alt="Logo fleurs d'oranger & chats errants">
                </section>
-        <section id="story" class="story hidden">
-        <h2><span class="story__title hidden">L'histoire</span></h2>
+               <section id="story" class="story hidden">
+            <h2><span class="story__title hidden">L'histoire</span></h2>
+          
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
@@ -27,7 +28,7 @@ get_header();
                 <!--  Nuage-->
                              <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
                              <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
-                             <!-- =================== -->
+                           
                              <div>
                                  <h3><span class="place__title hidden">Le Lieu</span></h3>
                                  <p><?php echo get_theme_mod('place'); ?></p>

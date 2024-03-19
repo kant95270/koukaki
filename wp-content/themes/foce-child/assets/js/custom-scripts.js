@@ -36,6 +36,7 @@ function monScript() {
     });    
   })(jQuery);
 
+
    // Initialize Swiper
    var swiper = new Swiper('.swiper-container', {
     spaceBetween: 60,
@@ -144,6 +145,12 @@ function monScript() {
       }
     }, 500);
 
-     
+    // On bouge les 2 nuages en fonction du scroll
+      posX = Math.round(0 - (window.scrollY - place.offsetTop - 200));
+      if (posX <= 0 && posX > -400) {
+        root.style.setProperty("--posX", posX + "px");
+      }     
   });
+
 }
+

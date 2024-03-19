@@ -27,7 +27,13 @@
 
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+
+        <ul>
+                <li class="site-title "><a href="<?php echo (get_site_url())?>" rel="home">Fleurs d'oranger & chats errants</a></li>
+         </ul>
+
+            <div id="modal" class="modal" aria-controls="primary-menu" aria-expanded="false"> 
+            <button class="modal__burger modal-open"> 
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
