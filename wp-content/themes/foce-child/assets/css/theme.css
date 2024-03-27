@@ -27,7 +27,6 @@ main {
   position: relative;
 }
 
-
 .modal__burger {
   position: absolute;
   display: flex;
@@ -53,7 +52,7 @@ main {
   transition: all .3s ease-in-out;
 }
 
-/* ----Fermeture menu ----  */
+
 /* Création du bouton pour fermer */
 .modal__burger.close .line:nth-child(2) {
   opacity: 0;
@@ -66,18 +65,7 @@ main {
 .modal__burger.close  span.line:last-child {
   transform: rotate(-45deg) translate3d(8px, -6px, 0);
 }
-/*  **********************************  */
-/*    Media query : max-width: 700px    */
-/*  **********************************  */
-@media all and (max-width: 700px) { 
-  .main-navigation {
-    height: 80px;
-  }
 
-  .main-navigation ul {
-		display: flex !important;
-	}
-}
 /* ************* */
 /*     MODAL     */
 /* ************* */
@@ -128,7 +116,8 @@ main {
   -webkit-filter: drop-shadow(0px 0px 5px #ff5c00);
   -moz-filter: drop-shadow(0px 0px 5px #ff5c00);
 }
-/* ---- footer ----  */
+
+/* ----modal footer ----  */
 .modal__content--footer {
   position: absolute;
   left: 50%;
@@ -137,7 +126,115 @@ main {
 }
 
 
+/*  **********************************  */
+/*    Media query : max-width: 700px    */
+/*  **********************************  */
+@media all and (max-width: 700px) { 
+  .main-navigation {
+    height: 80px;
+  }
 
+  .main-navigation ul {
+		display: flex !important;
+	}
+}
+
+/* ---- AJOUT 8 ----  */
+/* *************** */
+/*   CAT - MODAL   */
+/* *************** */
+.modal__content--story::before {
+  content: url("../images/Kawaneko.png");
+  position: absolute;
+  right: 20em;
+  bottom: -3em;
+  animation: float 7s 100ms infinite ease-in-out; 
+  /* transform: scale(0.7); */
+}
+
+.modal__content--place::before {
+  content: url("../images/Jaakuna-1.png");
+  position: absolute;
+  left: 20em;
+  top: -4em;  
+  animation: float 6s 200ms infinite ease-in-out; 
+  /* transform: scale(0.7); */
+}
+
+.modal__content--footer::before {
+  content: url("../images/Orenjiiro-1.png");
+  position: absolute;
+  right: 30em;
+  bottom: 0;  
+  animation: float 5s 300ms infinite ease-in-out; 
+  /* transform: scale(0.7); */
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 700px    */
+/*  **********************************  */
+@media all and (max-width: 700px) {
+  .modal__content--story::before,
+  .modal__content--place::before,
+  .modal__content--footer::before {
+    content: '';
+  }
+}
+
+/* ---- AJOUT 9 ----  */
+/* ****************** */
+/*   FLOWER - MODAL   */
+/* ****************** */
+.modal__content::after{
+  content: url("../images/orchid.png");
+  position: absolute;
+  left: -4em;
+  top: 3em;
+  transform: scale(0.8);
+}
+
+.modal__content--story::after {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 24em;
+  bottom: 0em;
+}
+
+.modal__content--characters::after {
+  content: url("../images/random_flower.png");
+  position: absolute;
+  left: 54em;
+  top: -2em;
+  transform: scale(0.3);
+}
+
+.modal__content--place::after {
+  content: url("../images/flower.png");
+  position: absolute;
+  right: 28em;
+  top: -2em;
+  transform: scale(0.5);
+}
+
+.modal__content--footer::after {
+  content: url("../images/hibiscus_footer.png");
+  position: absolute;
+  left: 500px;
+  bottom: -23.5em;
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 700px    */
+/*  **********************************  */
+@media all and (max-width: 700px) {
+  .modal__content::after,
+  .modal__content--story::after,
+  .modal__content--characters::after,
+  .modal__content--place::after,
+  .modal__content--footer::after {
+    content: '';
+  }
+}
 
 /* ************************* */
 /*       HERO - BANNER       */
@@ -180,6 +277,66 @@ main {
   animation: move-up 2s 300ms both, float 6s 2s infinite ease-in-out;  
 }
 
+
+.mouve-up {
+  animation: move-up 2s 300ms both;  
+}
+
+/* ---- AJOUT 1 ----  */
+/* Pour faire apparaitre les éléments en descendant et avec augmentatation de l'opacité */
+@keyframes move-down {
+  0% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }  
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+/* Pour faire apparaitre les éléments en montant et avec augmentatation de l'opacité */
+@keyframes move-up {
+  0% {
+    transform: translateY(600px);
+    opacity: 0;
+  } 
+  100% {
+    transform: translateY(0);  
+  }
+}
+
+
+/* Pour faire flotter les éléments */
+@keyframes float {
+  0% {
+    transform: translate3d(6px,6px,0);
+  }
+  12% {
+    transform: translate3d(0px,6px,0);
+  }
+  24% {
+    transform: translate3d(6px,-4px,0);
+  }
+  36% {
+    transform: translate3d(6px,0px,0);
+  }
+  48% {
+    transform: translate3d(-4px,-6px,0);
+  }
+  60% {
+    transform: translate3d(0px,-4px,0);
+  }
+  72% {
+    transform: translate3d(-8px,6px,0);
+  }
+  84% {
+    transform: translate3d(-4px,0px,0);
+  }
+  100% {
+    transform: translate3d(6px,6px,0); 
+  }
+}
 
 /*  **********************************  */
 /*    Media query : max-width: 920px    */
@@ -233,6 +390,119 @@ main {
   }
 }
 
+
+/* ********************* */
+/*     FLOWER - MAIN     */
+/* ********************* */
+
+/* Ajustements pour qu'elles puissent tourner rond */
+/* Sunflower.png */
+.story h2::after,
+.site-footer::before {
+	width: 154px;
+	height: 154px;
+}
+
+/* random_flower.png */
+#studio h2::before {
+  width: 203px;
+	height: 203px;
+}
+
+/* flower.png */
+#studio h2::after {
+  width: 109px;
+	height: 109px;
+}
+
+/* orchid.png */
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+/* Hibiscus.png */
+.story__article::after {
+	width: 188px;
+	height: 188px;
+}
+
+
+/* Ajout d'une rotation sur les fleurs */
+.story__article::after,
+#studio h2::before,
+.story h2::after,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after,
+.nomination::before,
+.nomination::after,
+.site-footer ul::after,
+.modal ::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
+@keyframes rotate-flower {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+.modal .modal__content--footer::after  {
+  animation: rotate-flower-08 var(--rotate) linear infinite;
+}
+
+@keyframes rotate-flower-08 {
+  from {
+      transform: rotate(0deg) scale(0.8);
+  }
+  to {
+      transform: rotate(360deg) scale(0.8);
+  }
+}
+
+.modal .modal__content--story::before  {
+  animation: rotate-flower-07 var(--rotate) linear infinite;
+}
+
+@keyframes rotate-flower-07 {
+  from {
+      transform: rotate(0deg) scale(0.7);
+  }
+  to {
+      transform: rotate(360deg) scale(0.7);
+  }
+}
+
+.modal .modal__content--place::after {
+  animation: rotate-flower-05 var(--rotate) linear infinite;
+}
+
+@keyframes rotate-flower-05 {
+  from {
+      transform: rotate(0deg) scale(0.5);
+  }
+  to {
+      transform: rotate(360deg) scale(0.5);
+  }
+}
+
+.modal .modal__content--characters::after {
+  animation: rotate-flower-03 var(--rotate) linear infinite;
+}
+
+@keyframes rotate-flower-03 {
+  from {
+      transform: rotate(0deg) scale(0.3);
+  }
+  to {
+      transform: rotate(360deg) scale(0.3);
+  }
+}
+
 /* ************************ */
 /*       LIEU - Nuage       */
 /* ************************ */
@@ -251,7 +521,7 @@ main {
   z-index: 2;
 }
 
-/* ---- deplacement des nuages----  */
+/* ---- AJOUT 4 ----  */
 #place .place--big_cloud {
   height: 122px;	
   top: 70px;
@@ -404,12 +674,7 @@ form input[type="submit"] {
   margin: 25px auto;
 }
 
-/* ---- AJOUT 5 ----  */
-.mouve-up {
-  animation: move-up 2s 300ms both;  
-}
-
-/* ---- animation sur titre H2 ----  */
+/* ---- animation histoire et titre personnages ----  */
 .animTitle {
   animation: animTitle 1s 1s forwards;
 }
@@ -424,8 +689,6 @@ form input[type="submit"] {
     opacity: 1;
   }
 }
-
-
 
 
 /* **************** */
@@ -508,3 +771,127 @@ form input[type="submit"] {
 }
 
 
+/* Suppression des fleurs du pieds de page pour le déplacer dans la nouvelle section- */
+.nomination::before {
+  content: url("../images/Sunflower.png");
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+.nomination::after {
+  content: url("../images/orchid.png");
+  position: absolute;
+  right: -4em;
+  top: -3em;
+}
+
+.site-footer::before {
+  content: '';
+}
+
+.site-footer::after {
+  content: '';
+}
+
+#place h3 {
+  width: 60%;
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 1192px    */
+/*  **********************************  */
+@media all and (max-width: 1192px) {
+  .nomination h3 {
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }  
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 920px    */
+/*  **********************************  */
+@media all and (max-width: 920px) {
+  h2 {
+    font-size: 3.3rem;
+  } 
+
+  .story > h2 span, 
+  .studio > h2 span {
+    width: 100%;
+  }
+
+  .story #characters {
+    margin-top: 10px !important;
+  }
+
+  #characters > h3,
+  #place h3 {
+    width: 100%;
+  }
+  
+  #nomination {
+    padding-top: 20px;
+  }
+
+  .nomination h3 {  
+    font-size: 2.4rem;    
+    line-height: 2.8rem;
+  }
+  
+  #studio h2::before,
+  .nomination::before,
+  .nomination::after {
+    content: '';
+  }
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 700px    */
+/*  **********************************  */
+@media all and (max-width: 700px) {
+  h2 {
+    font-size: 3rem;
+  } 
+
+  .nomination h3 {  
+    font-size: 1.9rem;    
+    line-height: 2.5rem;
+  }
+
+  #characters span,
+  #place span {
+    top: 100px;
+  }
+}
+
+/*  **********************************  */
+/*    Media query : max-width: 480px    */
+/*  **********************************  */
+@media all and (max-width: 480px) {
+  h2 {
+    font-size: 2.4rem;
+  } 
+
+  h3 {
+    font-size: 2rem;
+  }  
+  
+    #characters span,
+    #place span {
+      top: 100px;
+    }
+
+  .nomination__title {
+    height:200px
+  }
+
+  .nomination h3 {  
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  .nomination__logo {
+    max-width: 70%;
+  }
+}

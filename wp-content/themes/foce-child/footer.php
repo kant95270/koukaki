@@ -9,7 +9,7 @@
  * @package Fleurs_d\'oranger_&_Chats_errants
  */
 
-?>
+?>            <!-- Footer -->
 
 	<footer id="colophon" class="site-footer hidden">
         <ul>

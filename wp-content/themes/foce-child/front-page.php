@@ -4,7 +4,7 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-    <!--   BANNER Gestion du hero  -->
+    <!--   BANNER Gestion de la video  -->
          <section class="banner">
                    <img class="banner__background" src="<?php echo get_theme_file_uri() . '/assets/images/banner.png'; ?>" alt="">
                    <video class="banner__video" width="1440" autoplay="autoplay" muted=""
@@ -19,13 +19,13 @@ get_header();
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
-             <!-- 'Characters' déplacé dans template-parts\characters-slider.php -->
+             <!-- 'Characters' placé dans template-parts\characters-slider.php -->
                        <?php 
                            // include_once ( 'template-parts/characters-slider.php' ); 
                            get_template_part ( 'template-parts/characters' , 'slider' ); 
                        ?>
             <article id="place">
-                <!--  Nuage-->
+                <!-- partie Nuage-->
                              <img class="place--big_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/big_cloud.png'; ?>" alt="Gros nuage qui passe">
                              <img class="place--little_cloud" src="<?php echo get_theme_file_uri() . '/assets/images/little_cloud.png'; ?>" alt="Petit nuage qui passe">
                            
@@ -36,7 +36,7 @@ get_header();
              
                          </article>
         </section>
-
+                    <!-- partie studio koukaki -->
 
          <section id="studio" class="studio hidden">
                     <h2><span class="studio__title hidden">Studio Koukaki</span></h2>
@@ -48,13 +48,11 @@ get_header();
             </section>
 
              <!--  nomination au oscars-2021 -->
-                    <section id="nomination" class="nomination">
-                        <div class="nomination__title">
-                        <img src="<?php echo get_theme_file_uri() . '/assets/images/orange_nomination_bg.png'; ?>" alt="fond du titre des nominations">
-                        <h3>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
-                        </div>
-                        <img class="nomination__logo" src="<?php echo get_theme_file_uri() . '/assets/images/oscars-2021.png'; ?>" alt="Nomination aux Oscars 2022" ">
-                    </section>
+                   <!-- 'nomination' déplacé dans template-parts\nomination.php -->
+                   <?php 
+                           // include_once ( 'template-parts/nomination.php' ); 
+                           get_template_part ( 'template-parts/nomination' ,  )
+                       ?>
     </main><!-- #main -->
 
 <?php
