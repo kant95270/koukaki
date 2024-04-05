@@ -1,6 +1,6 @@
-body {
-  margin: auto;
-}/*# sourceMappingURL=colors.css.map */ghlights/shadows, based on a base color.
+/*
+ * Button mixin- creates a button effect with correct
+ * highlights/shadows, based on a base color.
  */
 /**
  * This function name uses British English to maintain backward compatibility, as developers

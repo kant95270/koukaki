@@ -1,0 +1,49 @@
+@import "animation";
+@import "banner";
+@import "flower";
+@import "modal";
+@import "nomination";
+@import "nuage";
+@import "swiper";
+@import "title";
+
+
+
+
+:root {
+    --rotate:15s;
+    --posX:0;
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+  
+  #page {
+    position: relative;
+  }
+  
+  main {
+    /* overflow: hidden; */
+  }
+  
+  /* ************** */
+  /*   Navigation   */
+  /* ************** */
+  
+  .main-navigation.toggled ul {
+    display: flex !important;
+  }
+  
+  #site-navigation {
+    position: relative;
+  }
+  
+  
+ 
+  
+
+  
+
+  
+  

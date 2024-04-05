@@ -85,7 +85,7 @@ function monScript() {
           elementName === "site-footer hidden"
         ) {
           // On valide la class qui va executer le keyframes d'apparition des sections
-          entry.target.classList.add("mouve-up");
+          entry.target.classList.add("move-up");
           // On arrête l'observation sur cet élément
           observer.unobserve(entry.target);
           // On retire la class qui cachait par défaut l'élement
@@ -145,7 +145,7 @@ function monScript() {
       }
     }, 500);
 
-    // On bouge les 2 nuages en fonction du scroll
+    // On bouge les 2 nuages en fonction du scroll 
       posX = Math.round(0 - (window.scrollY - place.offsetTop - 200));
       if (posX <= 0 && posX > -300) {
         root.style.setProperty("--posX", posX + "px");

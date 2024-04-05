@@ -1,0 +1,107 @@
+/* ********************* */
+/*     FLOWER - MAIN     */
+/* ********************* */
+/* Ajustements pour qu'elles puissent tourner rond */
+/* Sunflower.png */
+.story h2::after, .site-footer::before {
+  width: 154px;
+  height: 154px;
+}
+
+/* random_flower.png */
+#studio h2::before {
+  width: 203px;
+  height: 203px;
+}
+#studio h2::after {
+  width: 109px;
+  height: 109px;
+}
+
+/* flower.png */
+/* orchid.png */
+.site-footer::after {
+  width: 173px;
+  height: 173px;
+}
+
+/* Hibiscus.png */
+.story__article::after {
+  width: 188px;
+  height: 188px;
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
+/* Ajout d'une rotation sur les fleurs */
+#studio h2::before, .story h2::after, #studio h2::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
+.site-footer::before, .site-footer::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
+.nomination::before, .nomination::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
+.site-footer ul::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+
+.modal ::after {
+  animation: rotate-flower var(--rotate) linear infinite;
+}
+.modal .modal__content--footer::after {
+  animation: rotate-flower-08 var(--rotate) linear infinite;
+}
+.modal .modal__content--story::before {
+  animation: rotate-flower-07 var(--rotate) linear infinite;
+}
+.modal .modal__content--place::after {
+  animation: rotate-flower-05 var(--rotate) linear infinite;
+}
+.modal .modal__content--characters::after {
+  animation: rotate-flower-03 var(--rotate) linear infinite;
+}
+
+@keyframes rotate-flower {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate-flower-08 {
+  from {
+    transform: rotate(0deg) scale(0.8);
+  }
+  to {
+    transform: rotate(360deg) scale(0.8);
+  }
+}
+@keyframes rotate-flower-07 {
+  from {
+    transform: rotate(0deg) scale(0.7);
+  }
+  to {
+    transform: rotate(360deg) scale(0.7);
+  }
+}
+@keyframes rotate-flower-05 {
+  from {
+    transform: rotate(0deg) scale(0.5);
+  }
+  to {
+    transform: rotate(360deg) scale(0.5);
+  }
+}
+@keyframes rotate-flower-03 {
+  from {
+    transform: rotate(0deg) scale(0.3);
+  }
+  to {
+    transform: rotate(360deg) scale(0.3);
+  }
+}/*# sourceMappingURL=flower.css.map */

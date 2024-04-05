@@ -1,0 +1,15 @@
+/* ---- animation histoire et titre personnages ----  */
+.animTitle {
+  animation: animTitle 1s 1s forwards;
+}
+
+@keyframes animTitle {
+  0% {
+    transform: translate3d(-50%, 50%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0);
+    opacity: 1;
+  }
+}/*# sourceMappingURL=animation.css.map */
